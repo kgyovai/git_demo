@@ -19,6 +19,9 @@ public class Script {
         lines.add("Milk was a bad choice.");
         lines.add("Where for art thou?");
         lines.add("Out of 100 times, they might beat us 99. But not today.");
+        lines.add("We who are about to die salute you");
+        lines.add("You may take out lives but you will never take our FREEDOM!");
+        lines.add("Working hard or hardly working eh, Mike?");
     }
 
     public String getRandomLine() {
