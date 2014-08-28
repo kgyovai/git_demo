@@ -6,17 +6,18 @@ import java.util.List;
  */
 public class Movie {
     private Director director;
-    private List<Actor> actors = new ArrayList<Actor>();
-    private Script script;
+    private StageManager stageManager = new StageManager();
     private final int NUM_ACTORS = 5;
 
     public Movie() {
-        script = new Script();
+        Script script = new Script();
         director = new Director(script);
     }
 
     public void rollProduction() {
-        actors = director.castActors(NUM_ACTORS);
+        Thread props = new Thread(stageManager);
+        props.start();
+        List<Actor> actors = director.castActors(NUM_ACTORS);
         for (int i = 0; i < director.getMaxLines(); i++) {
             for (Actor actor : actors) {
                 actor.reciteLine(i);
